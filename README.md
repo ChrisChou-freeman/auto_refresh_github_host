@@ -7,3 +7,5 @@ host刷新提供者 [GitHub520](https://github.com/521xueweihan/GitHub520)
 
 
 支持系统: MacOS/Linux
+
+如何使用：执行index.js即可
