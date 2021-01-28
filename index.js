@@ -53,7 +53,7 @@ async function main(){
   if(result===null){
     fs.writeFileSync(hostsFilePath, hosts, {flag: 'a'});
   }else{
-    const newContent = content.toString().replace(result[0], hosts);
+    const newContent = content.toString().replace(result[0], hosts).trim();
     fs.writeFileSync(hostsFilePath, newContent);
   }
 }
