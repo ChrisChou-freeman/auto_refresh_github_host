@@ -6,6 +6,9 @@ const fs = require('fs');
 const https = require('https');
 
 const hostsFilePath = '/etc/hosts';
+const ignoreHosts = [
+  'github.githubassets.com',
+];
 
 async function download(){
   return new Promise(resolve=>{
@@ -41,6 +44,20 @@ async function download(){
   });
 }
 
+function filterDropedHost(content){
+  const contentList = content.split(/\n/);
+  for(let i=0;i<contentList.length;i++){
+    const element = contentList[i];
+    if(parseInt(element[0]).toString() !== 'NaN'){
+      const hostName = element.split(/\s+/)[1];
+      if(ignoreHosts.includes(hostName)){
+        contentList[i] = '#' + element;
+      }
+    }
+  }
+  return contentList.join('\n').trim();
+}
+
 async function main(){
   const reExpression = /# GitHub520 Host Start([\s\S]*?)# GitHub520 Host End/;
   const content = fs.readFileSync(hostsFilePath);
@@ -53,7 +70,8 @@ async function main(){
   if(result===null){
     fs.writeFileSync(hostsFilePath, hosts, {flag: 'a'});
   }else{
-    const newContent = content.toString().replace(result[0], hosts).trim();
+    const filterHost = filterDropedHost(hosts);
+    const newContent = content.toString().replace(result[0], filterHost).trim();
     fs.writeFileSync(hostsFilePath, newContent);
   }
 }
