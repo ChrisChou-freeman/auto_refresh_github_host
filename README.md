@@ -7,7 +7,7 @@ host刷新提供者 [GitHub520](https://github.com/521xueweihan/GitHub520)
 
 可以使用npm install -g 将这个工具安装到全局，以命令的形式来执行:refresh_github_host
 
-需要给予更改系统hosts文件的权限
+需要给予更改系统hosts文件的权限,或者执行程序的时候加上sudo
 
 支持系统: MacOS/Linux
 
