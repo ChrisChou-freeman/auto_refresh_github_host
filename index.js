@@ -7,7 +7,7 @@ const https = require('https');
 
 const hostsFilePath = '/etc/hosts';
 
-// 拖慢访问的host，或者非必要的host列表
+// 非需要覆盖的host，忽略列表
 const ignoreHosts = [
   'github.githubassets.com',
 ];
