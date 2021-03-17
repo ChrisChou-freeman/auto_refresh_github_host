@@ -14,7 +14,7 @@ const hostsFilePath = '/etc/hosts';
 
 // 非需要覆盖的host，忽略列表
 const ignoreHosts = [
-  'github.githubassets.com',
+  // 'github.githubassets.com',
 ];
 
 async function download(){
