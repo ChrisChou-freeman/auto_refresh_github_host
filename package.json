@@ -2,12 +2,12 @@
   "name": "auto_refresh_github_host",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.mjs",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "refresh_github_host": "./index.js"
+    "refresh_github_host": "./index.mjs"
   },
   "keywords": [],
   "author": "Chris",
