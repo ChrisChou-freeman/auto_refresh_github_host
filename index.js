@@ -7,8 +7,8 @@
 
 'use strict';
 
-import {readFileSync, writeFileSync} from 'fs';
-import {request as httpsRequest} from 'https';
+const {readFileSync, writeFileSync} = require('fs');
+const {request: httpsRequest} = require('https');
 
 const hostsFilePath = '/etc/hosts';
 
